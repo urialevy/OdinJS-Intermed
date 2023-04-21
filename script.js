@@ -6,28 +6,16 @@ function Book(title, author, pages, read) {
 
 }
 
-// const book1 ={title: "The Hobbit", 
-// author: "J.R.R. Tolkien",
-// pages:295, 
-// read: false}
-
-
-function bookInfo(book) {
-
-
-    if (book.read == false) {
-        return `${book.title} by ${book.author}, ${book.pages} pages, not read yet`
+Book.prototype.bookInfo = function(arg) {
+    if (this.read == false) {
+        return `${this.title} by ${this.author}, ${this.pages} pages, not read yet`
     }
     else {
-        return `${book.title} by ${book.author}, ${book.pages} pages, already read`
+        return `${this.title} by ${this.author}, ${this.pages} pages, already read`
     }}
 
-
-
-
 const book1 = new Book ('The Hobbit', 'J.R.R. Tolkien', 295, true)
-const book2 = new Book ('Catcher in the Rye', 'J.D. Salinger','234', false)
+const book2 = new Book ('Catcher in the Rye', 'J.D. Salinger',234, false)
 const book3 = new Book ('A Memory of Light', 'Robert Jordan', 909, true)
-console.log(bookInfo(book1))
-console.log(bookInfo(book2))
-console.log(bookInfo(book3))
+book1.bookInfo(book1)
+
